@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: grid;
+        justify-content: left;        
+        background-color: rgb(32, 18, 46);
+        font-family: Poppins;
+        min-height: 100vh;        
+    }
+    
+    .btn{
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.575);          
+        width: 215px;
+        height: 75px;
+        color: white;
+        overflow: hidden;    
+        font-size: 3.5em;         
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-info{
+        position: fixed;
+        top: 25rem;
+       letter-spacing: -6.5px;
+        left: 45rem;
+    }
+    .btn-success{        
+        position: fixed;
+        top: 25rem;
+        left: 65rem;
+    }
+
+    #containerResultado{
+        position: relative;
+        left: 750px;
+        top: -525px;
+    }
+
+    .card{
+        box-shadow: .5px .5px 10px 1px cyan;
+        text-align: center;
+        height: 150px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        background-color: rgba(73, 38, 105, 0.63);
+    }
+    .card::after{
+        width: 50%;
+        height: 150%;
+        top:0px ;
+        left: 25%;
+        border-radius: 40%;
+        z-index: -1;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(90deg);
+        position: absolute;
+        background-color: black;
+        content: "";
+    }
+    .card h5{
+        color: white;
+    }
+
+    .card span{
+        color: yellow;
+    }
+
+    .form {
+        position: relative;
+        margin: auto;
+        text-align: center;
+        height: 50px;
+        width: auto;
+        min-width: 60%;
+        
+        font-size: 2rem;
+    }
+
+</style>
+
+<body>
+    <div class="main-container">
+        <div class="card w-30 m-3 mt-5" >    
+            <div class="card-body">
+               <h5 class="card-title">CUANTO BITCOIN TENE</h5>
+               <span> Importe en Bitcoins. </span>
+               <input type="number" id="tenencia" class="form form-control"  value="0.02461630" autofocus >
+            </div>
+           </div>
+
+           <div class="card w-30 m-3 mt-5">
+                <div class="card-body">
+                   <h5 class="card-title">CUANTO TA EL  BLUE</h5>
+                   <span>Precio en pesos del valor de venta dolar paralelo.</span>
+                   <input type="number" id="dolarBlue" class="form form-control" value=""  >             
+            </div>
+           </div>
+      
+
+       <div class="card w-30 m-3 mt-5">
+              <div class="card-body">
+                 <h5 class="card-title">CUANTO TA EL BITCOIN</h5>
+                 <span>Precio de referencia valor venta Bitcoin en dolares.</span>
+                <input type="number" id="btcPrice" class="form form-control" value="" placeholder=""   >
+           
+           </div>
+       </div>
+
+       <button class="btn btn-success " id="start" >GO</button>
+      
+
+       <div class="card w-30 m-3 mt-5"  id="containerResultado">
+        <div class="card-body">
+           <h5 class="card-title">RESULTADO EN $</h5>
+          <span  id="resultado" class="form form-control"></span>    
+     
+     </div>
+ </div>
+    </div>
+    
+             
+
+    <button class="btn btn-info " id="refresh" onclick="location.reload()" >Refresh</button>
+ 
+      
+  <script src="main.js"></script>
+
+    
+        
+
+    
+
+</body>
+</html>
