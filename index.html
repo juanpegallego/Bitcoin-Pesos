@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bitcoin Pesos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
@@ -19,7 +19,8 @@
         justify-content: left;        
         background-color: rgb(32, 18, 46);
         font-family: Poppins;
-        min-height: 100vh;        
+        min-height: 100vh;   
+        overflow: hidden;     
     }
     
     .btn{
@@ -94,8 +95,15 @@
         height: 50px;
         width: auto;
         min-width: 60%;
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;        
         font-size: 2rem;
+    }
+
+    #resultado{
+        color: red;
+        letter-spacing: -1.5px;
     }
 
 </style>
