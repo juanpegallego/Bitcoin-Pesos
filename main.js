@@ -30,17 +30,15 @@ function app(){
     document.getElementById('start').addEventListener('click', (e) => {
         console.log('starting')
         e.preventDefault();
-        tenenciaBtc();
-       
+        tenenciaBtc();       
     })
 } 
 
 
 
 
-function tenenciaBtc(){
-    
-    let x= tenencia.value * dolarBlue.value * btcPrice.value;
+function tenenciaBtc(){    
+    let x = tenencia.value * dolarBlue.value * btcPrice.value;
     document.getElementById('resultado').innerHTML = "$" + x.toFixed(2) + ".-";
     
 };
