@@ -1,114 +1,199 @@
+*{
 
-    body 
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;    
+    font-family: Poppins, 'sans serif';
+}
+   
+   
+   body 
     {
-        margin: 0;
-        padding: 50px;
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        font-family: Poppins;
+        justify-content: center;
+        align-items: center;
         min-height: 100vh;
+        width: 100vw;
         overflow: hidden;
+        background: rgb(143,144,152);
+        background: radial-gradient(circle, rgba(143,144,152,1) 0%, rgba(101,97,98,1) 100%);
+    }
+    @media screen and (max-width: 600px) {
+        body {
+          overflow-y: scroll;
+          width: 100%;
+          overflow-x: hidden;
+        }
     }
 
     .main-container 
     {
-        position: relative;
-        width: 40%;
-    }
-
-    .btn 
-    {
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.575);
-        width: 215px;
-        height: 75px;
-        color: white;
-        overflow: hidden;
-        font-size: 3.5em;
+        width: 100%;
+        height: 100vh;
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
         align-items: center;
+    }
+
+    @media screen and (max-width: 600px) {
+        .main-container {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    
+   
+
+    
+    .board{
+        display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding-left: 200px;
+        min-height: 100vh;
     }
 
-    .btn-info 
-    {
-        position: fixed;
-        top: 25rem;
-        letter-spacing: -6.5px;
-        left: 45rem;
+    @media screen and (max-width: 600px) {
+        .board{
+            position: relative;
+        }
     }
-
-    .btn-success 
-    {
-        position: fixed;
-        top: 25rem;
-        left: 65rem;
-    }
-
-    #containerResultado 
-    {
-        position: relative;
-        left: 750px;
-        top: -525px;
-    }
-
-    .card 
+    .board .card 
     {
         text-align: center;
-        height: 150px;
         padding: 10px;
         display: flex;
+        width: 50%;
         justify-content: center;
         align-items: center;
         text-align: center;
+        min-width: 250px;
+        border: none;
         overflow: hidden;
-        background-color: rgba(73, 38, 105, 0.63);
+        margin-top: 15px;
+        background-color: transparent;
     }
-
-    .card::after 
-    {
+    .board .card-read{
         width: 50%;
-        height: 150%;
-        top: 0px;
-        left: 25%;
-        border-radius: 40%;
-        z-index: -1;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: rotate(90deg);
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.726);
-        content: "";
+    }
+    .board .card input{
+        width: 100%;
+        min-width: 150px;
+        min-height: 50px;
+        text-align: center;
+        border: none;
+        box-shadow: 0px 0px 10px 1px white;
+        padding: 5px 10px;
+        font-size: 2.5rem;
     }
 
-    .card h5 
+    #tenencia{
+        width: 100%;
+        min-width: 200px;
+    }
+   
+    h5 
     {
         color: white;
+        font-size:1.4rem;
+        margin-bottom: 20px;
     }
 
-    .card span 
-    {
-        color: yellow;
-    }
+    
 
-    .form 
+    .board .form 
     {
         position: relative;
         margin: auto;
         text-align: center;
         height: 50px;
         width: auto;
-        min-width: 60%;
+        min-width: 20%;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 2rem;
     }
 
-    #resultado 
+
+    button 
     {
-        color: red;
-        letter-spacing: -1.5px;
+        color: black;
+        overflow: hidden;
+        font-size: 3.5em;
+        margin: 20px;
+        cursor: pointer;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        border: none;
+        
+        background-color: transparent;
+        justify-content: center;
     }
+
+    button:hover{
+        box-shadow: none;
+        color: white;
+        text-shadow: 0px 1px 5px white;
+    }
+
+    
+    .refresh-icon{
+        color: black;
+        width: 120px;
+        border-radius: 1rem;
+        background-color: rgb(72, 89, 243);
+        height: 120px;
+    }
+    
+
+    .card-resultado
+    {
+        
+        min-width: 150px;
+        position: absolute;
+        top:25%;
+        padding: 20px;
+        right: 200px;
+        border: none;
+        color: white;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    @media screen and (max-width: 600px) {
+        .card-resultado{
+            position: relative;
+        }
+    }
+    
+    .card-resultado input{
+        min-height: 50px;
+        text-align: center;
+        border: none;
+        box-shadow: 0px 0px 10px 1px white;
+        padding: 15px 0px;
+        padding-left: 10px;
+        font-size: 2.5rem;
+    }
+    #resultado{
+       min-width: 300px;
+       
+       max-width: 80%;
+    }
+
+    .card-resultado input::placeholder{
+        font-size: 3rem;
+        color: black;
+    }
+ 
