@@ -6,58 +6,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin Pesos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mediaqueries.css">
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 
 <body>
     <div class="main-container">
-        <div class="card w-30 m-3 mt-5">
-            <div class="card-body">
-                <h5 class="card-title">CUANTOS BITCOINS TIENES?</h5>
-                <span> Cual es tu saldo en Bitcoins? </span>
-                <input type="number" id="tenencia" class="form form-control" value="0.02461630" autofocus>
+
+        <div class="board">
+
+            <div class="card ">
+                <div class="card-body">
+                    <h5 class="card-title">CANTIDAD  BITCOIN</h5>                    
+                    <input type="number" id="tenencia" class="input_tenencia"  min="0" value=" " step=".0001" autofocus>
+                </div>
             </div>
-        </div>
-
-        <div class="card w-30 m-3 mt-5">
-            <div class="card-body">
-                <h5 class="card-title">CUAL ES EL VALOR DEL DOLAR ?</h5>
-                <span>Valor de venta en Pesos Argentinos del Dolar paralelo.</span>
-                <input type="number" id="dolarBlue" class="form form-control" value="">
+    
+            <div class="card card-read">
+                <div class="card-body">
+                    <h5 class="card-title">VALOR DOLAR </h5>
+                    <input type="number" readonly disabled id="dolarBlue" value="" >
+                </div>
             </div>
+    
+    
+            <div class="card card-read">
+                <div class="card-body">
+                    <h5 class="card-title">VALOR BITCOIN</h5>
+                    <input type="number" readonly  disabled id="btcPrice"  value="" placeholder="" >
+    
+                </div>
+            </div> 
+    
         </div>
+        
+    
 
-
-        <div class="card w-30 m-3 mt-5">
-            <div class="card-body">
-                <h5 class="card-title">CUAL ES EL PRECIO DEL BITCOIN?</h5>
-                <span>Precio promedio valor venta Bitcoin en dolares.</span>
-                <input type="number" id="btcPrice" class="form form-control" value="" placeholder="">
-
+        <div class="card card-resultado" id="containerResultado">
+            <div class="btn_container">
+                <button id="refresh" class="refresh-btn" onclick="location.reload()">
+                    <ion-icon name="refresh-outline" class="refresh-icon"></ion-icon>
+                    </button>
+                
+                    <button class="options-btn">
+                        <ion-icon name="options-outline" id="options" onclick="modifyInputs()" class="options-icon"></ion-icon>
+                    </button>
             </div>
-        </div>
-
-        <button class="btn btn-success " id="start">GO</button>
+            
 
 
-        <div class="card w-30 m-3 mt-5" id="containerResultado">
-            <div class="card-body">
+
                 <h5 class="card-title">RESULTADO EN $</h5>
-                <span id="resultado" class="form form-control"></span>
+                <input type="number"
+                        readonly
+                        id="resultado"                    
+                ></input>
 
-            </div>
         </div>
+        
     </div>
 
 
 
-    <button class="btn btn-info " id="refresh" onclick="location.reload()">Refresh</button>
     <script src="main.js"></script>
 </body>
 </html>
