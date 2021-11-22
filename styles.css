@@ -17,12 +17,13 @@
         width: 100vw;
         overflow: hidden;
         background: rgb(143,144,152);
-        background: radial-gradient(circle, rgba(143,144,152,1) 0%, rgba(101,97,98,1) 100%);
+        background: radial-gradient(circle, rgb(76, 76, 77) 0%, rgba(101,97,98,1) 100%);
     }
     @media screen and (max-width: 600px) {
         body {
           overflow-y: scroll;
-          width: 100%;
+          width: 100vw;
+          min-height: 100vh;
           overflow-x: hidden;
         }
     }
@@ -41,7 +42,10 @@
     @media screen and (max-width: 600px) {
         .main-container {
             flex-direction: column;
-            justify-content: center;
+            justify-content:center;
+            flex-wrap: nowrap;
+            height: initial;
+            min-height: 150vh;
         }
     }
     
@@ -63,6 +67,9 @@
     @media screen and (max-width: 600px) {
         .board{
             position: relative;
+            padding-left: 0px;
+            top: -170px;
+            min-height: 50vh;
         }
     }
     .board .card 
@@ -80,9 +87,11 @@
         margin-top: 15px;
         background-color: transparent;
     }
+  
     .board .card-read{
         width: 50%;
     }
+
     .board .card input{
         width: 100%;
         min-width: 150px;
@@ -93,12 +102,17 @@
         padding: 5px 10px;
         font-size: 2.5rem;
     }
+    .board .card-read input{
+        box-shadow:none;
+    }
 
     #tenencia{
         width: 100%;
         min-width: 200px;
+        cursor: pointer;
     }
-   
+ 
+      
     h5 
     {
         color: white;
@@ -146,18 +160,11 @@
     }
 
     
-    .refresh-icon{
-        color: black;
-        width: 120px;
-        border-radius: 1rem;
-        background-color: rgb(72, 89, 243);
-        height: 120px;
-    }
+   
     
 
     .card-resultado
-    {
-        
+    {        
         min-width: 150px;
         position: absolute;
         top:25%;
@@ -174,9 +181,54 @@
     @media screen and (max-width: 600px) {
         .card-resultado{
             position: relative;
+            top: inherit;
+            left: 0px;
+            right: initial;
+            top: -100px;
         }
     }
-    
+    .btn_container{
+        display: flex;
+        flex-direction: row;
+    }
+    .refresh-btn{
+        background-color: rgb(101, 115, 247);
+        height: 90px;
+        width: 90px;        
+        top: -50px;
+        position: relative;
+        border-radius: 50%;
+    }
+    .refresh-btn:hover{       
+        background-color: rgb(68, 77, 158);
+    }
+
+
+    .options-btn{
+        background-color: rgb(236, 225, 67);
+        height: 90px;
+        width: 90px;        
+        border-radius: 50%;
+        position: relative;
+        top: -50px;
+    }
+    .options-btn:hover{
+        background-color: rgb(167, 158, 46);
+       
+    }
+
+    @media screen and (max-width: 600px) {
+        .refresh-btn{
+            top: -50px;
+            position: relative;
+        }
+    }
+
+    .refresh-icon{
+        width: 100%;
+        height:100%;
+        border-radius: 1rem;
+    }
     .card-resultado input{
         min-height: 50px;
         text-align: center;
@@ -186,10 +238,24 @@
         padding-left: 10px;
         font-size: 2.5rem;
     }
+    
     #resultado{
-       min-width: 300px;
-       
+       min-width: 300px;       
        max-width: 80%;
+    }
+    @media screen and (max-width: 600px) {
+        #resultado{
+            position: relative;
+            min-width: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 150px;
+        }
+        #resultado::placeholder{
+
+            font-size: 2rem;
+        }
     }
 
     .card-resultado input::placeholder{

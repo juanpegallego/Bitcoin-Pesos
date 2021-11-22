@@ -23,15 +23,15 @@
 
             <div class="card ">
                 <div class="card-body">
-                    <h5 class="card-title">HOW MANY BITCOINS?</h5>                    
-                    <input type="number" id="tenencia"  min="0" value=" " step=".0001" autofocus>
+                    <h5 class="card-title">CANTIDAD  BITCOIN</h5>                    
+                    <input type="number" id="tenencia" class="input_tenencia"  min="0" value=" " step=".0001" autofocus>
                 </div>
             </div>
     
             <div class="card card-read">
                 <div class="card-body">
                     <h5 class="card-title">VALOR DOLAR </h5>
-                    <input type="number" readonly id="dolarBlue" value="">
+                    <input type="number" readonly disabled id="dolarBlue" value="" >
                 </div>
             </div>
     
@@ -39,7 +39,7 @@
             <div class="card card-read">
                 <div class="card-body">
                     <h5 class="card-title">VALOR BITCOIN</h5>
-                    <input type="number" readonly id="btcPrice"  value="" placeholder="">
+                    <input type="number" readonly  disabled id="btcPrice"  value="" placeholder="" >
     
                 </div>
             </div> 
@@ -49,16 +49,24 @@
     
 
         <div class="card card-resultado" id="containerResultado">
-            <button class="card" id="refresh" onclick="location.reload()">
-                <ion-icon name="refresh-outline" class="refresh-icon"></ion-icon>
-                </button>
+            <div class="btn_container">
+                <button id="refresh" class="refresh-btn" onclick="location.reload()">
+                    <ion-icon name="refresh-outline" class="refresh-icon"></ion-icon>
+                    </button>
+                
+                    <button class="options-btn">
+                        <ion-icon name="options-outline" id="options" onclick="modifyInputs()" class="options-icon"></ion-icon>
+                    </button>
+            </div>
             
+
+
+
                 <h5 class="card-title">RESULTADO EN $</h5>
                 <input type="number"
                         readonly
-                        id="resultado"
-                    
-                    ></input>
+                        id="resultado"                    
+                ></input>
 
         </div>
         
